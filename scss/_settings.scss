@@ -34,12 +34,20 @@
 // $column-gutter: rem-calc(30);
 // $total-columns: 12;
 
+// We use these as default colors throughout
+$primary-color: #2d469d;
+$secondary-color: #f2f2f2;
+$alert-color: #f04124;
+$success-color: #43AC6A;
+$warning-color: #f08a24;
+$info-color: #a0d3e8;
+
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
-// $body-font-style: normal;
+$body-bg: #fff;
+$body-font-color: $primary-color;
+$body-font-family: 'Raleway', sans-serif;
+$body-font-weight: normal;
+$body-font-style: normal;
 
 // We use this to control font-smoothing
 // $font-smoothing: antialiased;
@@ -48,14 +56,6 @@
 // $text-direction: ltr;
 // $opposite-direction: right;
 // $default-float: left;
-
-// We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
