@@ -19,17 +19,10 @@
   }
 
   html {
-    font-size: 100%;
-/*@media screen and (max-width: 800px) {*/
-  /*html {*/
-    /*font-size: 87.5%;*/
-  /*}*/
-/*}*/
-/*@media screen and (max-width: 560px) {*/
-  /*html {*/
-    /*font-size: 75%;*/
-  /*}*/
-/*}*/
+    font-size: 75%;
+
+    @include media($mediumish-screens) { font-size: 87.5%; }
+    @include media($bigish-screens) { font-size: 100%; }
   }
 
   body {
@@ -97,11 +90,13 @@
 
   .viewport {
     @include outer-container;
+    @include box-sizing(content-box); // in this case, we want the padding to be *outside*
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .feature {
-    @include span-columns(4);
-    @include omega(3n);
     text-align: left;
+    padding: 0 2rem 2rem;
 
     .badge {
       max-width: 5.3125rem;
@@ -109,11 +104,22 @@
       display: block;
       margin: 0 auto 1em;
     }
+
+    @include media($bigish-screens) {
+      @include span-columns(4);
+      &:nth-of-type(3n+1) {
+        @include omega;
+      }
+    }
   }
   .sponsor {
     @include span-columns(6);
-    @include omega(2n);
-
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &:nth-of-type(2n+1) {
+      // omega uses nth-child, we want type.
+      @include omega;
+    }
     img {
       max-width: 66%;
     }
@@ -205,7 +211,7 @@
   }
 
   .feature {
-    padding: 0 0 3rem;
+    padding-bottom: 3rem;
     margin-top: -2.65625rem; // -50% the height of the badges
 
     p { margin: 1em 0; }
