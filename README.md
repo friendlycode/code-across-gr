@@ -4,7 +4,7 @@ The easiest way to get started with Foundation + Compass.
 
 ## Built With
 
-  * Foundation
+  * [bourbon.io](http://bourbon.io) and [neat](http://neat.bourbon.io)
 
 ## Thanks
 
