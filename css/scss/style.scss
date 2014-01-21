@@ -72,6 +72,8 @@
     &:hover, &:focus {
       color: $brand-blue;
     }
+
+    img { border: none; }
   }
 
   hr {
