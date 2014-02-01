@@ -127,6 +127,9 @@
       max-width: 66%;
     }
   }
+  .platinum {
+    @include span-columns(12);
+  }
   .note {
     @include clearfix;
     clear: both;
