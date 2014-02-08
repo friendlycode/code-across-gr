@@ -115,6 +115,19 @@
       }
     }
   }
+  .partner {
+    @include shift(4);
+    @include span-columns(4);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &:nth-of-type(2n+1) {
+      // omega uses nth-child, we want type.
+      @include omega;
+    }
+    img {
+      max-width: 66%;
+    }
+  }
   .sponsor {
     @include span-columns(6);
     margin-top: 1rem;
