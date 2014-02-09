@@ -143,6 +143,19 @@
   .platinum {
     @include span-columns(12);
   }
+  .project {
+    @include span-columns(4);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    &:nth-of-type(3n) {
+      // omega uses nth-child, we want type.
+      @include omega;
+    }
+  }
+  .lead {
+    font-style: italic;
+  }
   .note {
     @include clearfix;
     clear: both;

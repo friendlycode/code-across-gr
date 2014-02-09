@@ -146,6 +146,22 @@ section {
   .platinum:last-child {
     margin-right: 0; }
 
+.project {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem; }
+  .project:last-child {
+    margin-right: 0; }
+  .project:nth-of-type(3n) {
+    margin-right: 0; }
+
+.lead {
+  font-style: italic; }
+
 .note {
   *zoom: 1;
   clear: both;
