@@ -188,23 +188,14 @@
     padding: 2.25rem 0;
     position: relative;
 
-    h1, h2 {
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin: 0;
-      color: $soft-blue;
-    }
     h1 {
-      font-size: 1.5rem;
-      span { 
-        font-size: 1rem;
-        display: block;
-      }
+      background: url(../img/logo_2x.png) no-repeat;
+      background-size: contain;
+      width: 223px;
+      height: 59px;
+      margin: 0 auto;
     }
-    h2 {
-      font-size: .75rem;
-    }
+    h1, h2 { @include hide-text; }
 
     &:after {
       content: '';
