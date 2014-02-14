@@ -116,8 +116,7 @@
     }
   }
   .partner {
-    @include shift(4);
-    @include span-columns(4);
+    @include span-columns(6);
     margin-top: 1rem;
     margin-bottom: 1rem;
     &:nth-of-type(2n+1) {
