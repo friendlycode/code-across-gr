@@ -97,6 +97,7 @@
     padding-right: 1rem;
   }
   .feature {
+    // projects, schedule, features & benefits, etc
     text-align: left;
     padding: 0 2rem 2rem;
 
@@ -110,55 +111,39 @@
     @include media($bigish-screens) {
       @include span-columns(4);
       padding-left: 0;
-      &:nth-of-type(3n+1) {
-        @include omega;
+
+      // neat's omega() uses nth-child, we want nth-type
+      &:last-child {
+        margin-right: 0;
       }
+      &:nth-of-type(3n) {
+        margin-right: 0; 
+      }
+      &:nth-of-type(3n+1) {
+        clear: left; 
+      } 
     }
-  }
-  .partner {
-    @include span-columns(6);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    &:nth-of-type(2n+1) {
-      // omega uses nth-child, we want type.
-      @include omega;
-    }
-    img {
-      max-width: 66%;
-    }
-  }
-  .sponsor {
-    @include span-columns(6);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    &:nth-of-type(2n+1) {
-      // omega uses nth-child, we want type.
-      @include omega;
-    }
-    img {
-      max-width: 66%;
-    }
-  }
-  .platinum {
-    @include span-columns(12);
-  }
-  .project {
-    @include span-columns(4);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 0 1rem;
-    &:nth-of-type(3n) {
-      // omega uses nth-child, we want type.
-      @include omega;
-    }
-  }
-  .lead {
-    font-style: italic;
   }
   .note {
     @include clearfix;
     clear: both;
     padding-top: 1rem;
+  }
+
+  .logo {
+    // sponsors, partners, orgs, etc
+    display: block;
+    float: left;
+    width: 50%;
+    @include pad(default);
+   
+    &.platinum {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    img {
+      max-width: 60%;
+    }
   }
 
   .button {
@@ -260,13 +245,47 @@
   }
 }
 
-#schedule {
+#schedule, #projects {
   header {
     margin-bottom: 2rem;
   }
-  .feature h2 { 
-    color: $grey-50;
-    margin-bottom: 0.25em;
-    font-size: 1rem;
+  
+  .feature {
+    h2 { 
+      color: $grey-50;
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+    h3 {
+      margin: 0 0 .5em;
+    }
+
+    // really verbose here, but dealing with it given iconography, responsiveness, and current column widths
+    &.build, &.map, &.write, &.analyze {
+      h2, h3 {
+        padding-left: 4rem;
+      }
+
+      h2 {
+        position: relative;
+        background: transparentize(#fff, 0.5);
+        &:before {
+          content: '';
+          background: url(../img/apps_@2x.png) no-repeat 0 0;
+          background-size: contain;
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          top: -.25rem;
+          left: 0;
+        }
+      }
+    }
+    &.map h2:before { background-image: url(../img/systems_@2x.png); }
+    &.write h2:before { background-image: url(../img/writing_@2x.png); }
+    &.analyze h2:before { background-image: url(../img/visualization_@2x.png); }
+
   }
+
 }
+
